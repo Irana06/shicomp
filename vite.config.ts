@@ -13,8 +13,17 @@ export default defineConfig({
             input: ['resources/css/app.css', 'resources/js/app.tsx'],
             refresh: true,
             fonts: [
-                bunny('Instrument Sans', {
-                    weights: [400, 500, 600],
+                // Latin glyphs only; kanji accents fall back to the system
+                // Japanese font so the build does not ship large CJK files.
+                bunny('Zen Kaku Gothic New', {
+                    weights: [400, 500, 700],
+                    subsets: ['latin'],
+                    optimizedFallbacks: false,
+                }),
+                bunny('Zen Maru Gothic', {
+                    weights: [500, 700, 900],
+                    subsets: ['latin'],
+                    optimizedFallbacks: false,
                 }),
             ],
         }),

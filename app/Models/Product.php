@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\CarbonImmutable;
 use Database\Factories\ProductFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
@@ -9,7 +10,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Carbon;
 
 /**
  * @property string $id
@@ -24,8 +24,8 @@ use Illuminate\Support\Carbon;
  * @property bool $is_featured
  * @property int $sort_order
  * @property bool $published
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
+ * @property CarbonImmutable|null $created_at
+ * @property CarbonImmutable|null $updated_at
  */
 #[Fillable(['category_id', 'name', 'slug', 'tagline', 'description', 'price', 'features', 'wa_template', 'is_featured', 'sort_order', 'published'])]
 class Product extends Model

@@ -16,9 +16,9 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         $categories = collect([
-            ['slug' => 'website', 'name' => 'Website', 'description' => 'Company profile, toko online, hingga sistem dan dashboard custom dengan Laravel & React.'],
-            ['slug' => 'aplikasi-mobile', 'name' => 'Aplikasi Mobile', 'description' => 'Aplikasi Android & iOS dari satu kode dengan Flutter.'],
-            ['slug' => 'maintenance', 'name' => 'Maintenance', 'description' => 'Setup server, domain, SSL, CI/CD, pemantauan, dan backup.'],
+            ['slug' => 'website', 'name' => 'Website', 'sort_order' => 1, 'description' => 'Company profile, toko online, hingga sistem dan dashboard custom dengan Laravel & React.'],
+            ['slug' => 'aplikasi-mobile', 'name' => 'Aplikasi Mobile', 'sort_order' => 2, 'description' => 'Aplikasi Android & iOS dari satu kode dengan Flutter.'],
+            ['slug' => 'maintenance', 'name' => 'Maintenance', 'sort_order' => 3, 'description' => 'Setup server, domain, SSL, CI/CD, pemantauan, dan backup.'],
         ])->mapWithKeys(fn (array $category) => [
             $category['slug'] => ProductCategory::updateOrCreate(['slug' => $category['slug']], $category),
         ]);

@@ -41,6 +41,12 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'contact' => [
+                'whatsapp' => config('shikacomp.whatsapp'),
+                'email' => config('shikacomp.email'),
+                'instagram' => config('shikacomp.instagram'),
+                'business_hours' => config('shikacomp.business_hours'),
+            ],
             'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',
         ];
     }
