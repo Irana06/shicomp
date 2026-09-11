@@ -16,6 +16,17 @@ enum PaymentStatusEnum: string
         return array_column(self::cases(), 'value');
     }
 
+    /**
+     * @return list<array{value: string, label: string}>
+     */
+    public static function options(): array
+    {
+        return array_map(
+            fn (self $status) => ['value' => $status->value, 'label' => $status->label()],
+            self::cases(),
+        );
+    }
+
     public function label(): string
     {
         return match ($this) {

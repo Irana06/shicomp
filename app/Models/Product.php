@@ -24,6 +24,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property bool $is_featured
  * @property int $sort_order
  * @property bool $published
+ * @property-read int|null $projects_count
  * @property CarbonImmutable|null $created_at
  * @property CarbonImmutable|null $updated_at
  */

@@ -1,5 +1,8 @@
 import { Link } from '@inertiajs/react';
-import { BookOpen, FolderGit2, LayoutGrid } from 'lucide-react';
+import { FolderKanban, Globe, LayoutGrid, Package, Tags } from 'lucide-react';
+import ProductCategoryController from '@/actions/App/Http/Controllers/Admin/ProductCategoryController';
+import ProductController from '@/actions/App/Http/Controllers/Admin/ProductController';
+import ProjectController from '@/actions/App/Http/Controllers/Admin/ProjectController';
 import AppLogo from '@/components/app-logo';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
@@ -13,7 +16,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { dashboard } from '@/routes';
+import { dashboard, home } from '@/routes';
 import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
@@ -22,18 +25,31 @@ const mainNavItems: NavItem[] = [
         href: dashboard(),
         icon: LayoutGrid,
     },
+    {
+        title: 'Project',
+        href: ProjectController.index(),
+        icon: FolderKanban,
+        activeWhenNested: true,
+    },
+    {
+        title: 'Paket',
+        href: ProductController.index(),
+        icon: Package,
+        activeWhenNested: true,
+    },
+    {
+        title: 'Kategori',
+        href: ProductCategoryController.index(),
+        icon: Tags,
+        activeWhenNested: true,
+    },
 ];
 
 const footerNavItems: NavItem[] = [
     {
-        title: 'Repository',
-        href: 'https://github.com/laravel/react-starter-kit',
-        icon: FolderGit2,
-    },
-    {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#react',
-        icon: BookOpen,
+        title: 'Lihat website',
+        href: home(),
+        icon: Globe,
     },
 ];
 

@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string|null $description
  * @property string $slug
  * @property int $sort_order
+ * @property-read int|null $products_count
  * @property CarbonImmutable|null $created_at
  * @property CarbonImmutable|null $updated_at
  */

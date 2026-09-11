@@ -11,4 +11,6 @@ export type NavItem = {
     href: NonNullable<InertiaLinkProps['href']>;
     icon?: LucideIcon | null;
     isActive?: boolean;
+    /** Also highlight the item on nested pages, e.g. /admin/projects/create. */
+    activeWhenNested?: boolean;
 };
