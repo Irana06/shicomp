@@ -1,9 +1,9 @@
 <?php
 
+use App\Enums\StatusEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Enums\StatusEnum;
 
 return new class extends Migration
 {
@@ -14,8 +14,7 @@ return new class extends Migration
     {
         Schema::create('project_status_logs', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('project_id');
-            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreignUuid('project_id')->constrained()->cascadeOnDelete();
             $table->enum('status', StatusEnum::values())->default(StatusEnum::Pending->value);
             $table->text('comment')->nullable();
             $table->timestamps();
