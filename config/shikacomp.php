@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'whatsapp' => env('SHIKACOMP_WHATSAPP', '0822-3336-5018'),
+    'whatsapp' => env('SHIKACOMP_WHATSAPP', '6282233365018'),
 
     'email' => env('SHIKACOMP_EMAIL'),
 
