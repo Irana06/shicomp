@@ -11,7 +11,7 @@ export const faq: FaqItem[] = [
     },
     {
         question: 'Bagaimana sistem pembayarannya?',
-        answer: '[Jelaskan skema pembayaran, misalnya DP di awal dan pelunasan sebelum serah terima.]',
+        answer: 'DP 50% sebelum pengerjaan dimulai, pelunasan 50% setelah project selesai dan sebelum online atau serah terima. Paket Maintenance dibayar di awal setiap bulan.',
     },
     {
         question: 'Apakah harga sudah termasuk domain & hosting?',
@@ -19,11 +19,15 @@ export const faq: FaqItem[] = [
     },
     {
         question: 'Berapa kali saya bisa minta revisi?',
-        answer: 'Jumlah revisi mengikuti paket: [X] kali untuk Ume, [X] kali untuk Take, dan disepakati bersama untuk Matsu.',
+        answer: 'Ume 2 kali, Take 3 kali, dan Matsu disepakati bersama di tahap Rancang. Perubahan di luar itu dihitung sebagai pekerjaan tambahan, dengan harga yang disampaikan dulu sebelum dikerjakan.',
     },
     {
         question: 'Apakah source code diserahkan ke saya?',
-        answer: '[Jelaskan kebijakan serah terima source code dan akses server.]',
+        answer: 'Bisa. Setelah project selesai ada dua pilihan: dirawat ShikaComp lewat paket Maintenance (website tetap online di server saya, update dan backup diurus), atau serah terima penuh berupa source code, database, dan akses server beserta panduan singkat. Mulai dengan Maintenance pun tetap bisa minta serah terima kapan saja.',
+    },
+    {
+        question: 'Apakah ada garansi?',
+        answer: 'Ada. Bug yang muncul dalam 30 hari setelah website atau aplikasi online diperbaiki gratis, selama penyebabnya bukan perubahan dari pihak lain.',
     },
     {
         question: 'Bisa bantu merawat website yang sudah ada?',

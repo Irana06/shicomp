@@ -37,7 +37,10 @@ export function CallToAction() {
                         </h2>
                         {contact.business_hours && (
                             <p className="text-shu-soft text-[15px] sm:text-lg">
-                                Balasan pada {contact.business_hours}.
+                                {/* A plain number means "replies within N hours". */}
+                                {/^\d+$/.test(contact.business_hours)
+                                    ? `Dibalas dalam ${contact.business_hours} jam.`
+                                    : `Balasan pada ${contact.business_hours}.`}
                             </p>
                         )}
                     </div>
