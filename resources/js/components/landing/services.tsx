@@ -1,4 +1,11 @@
-import { AppWindow, Server, Smartphone } from 'lucide-react';
+import {
+    AppWindow,
+    Plug,
+    Server,
+    ShieldCheck,
+    Smartphone,
+    Wrench,
+} from 'lucide-react';
 import { Container, SectionHeading } from '@/components/landing/primitives';
 
 const services = [
@@ -22,6 +29,27 @@ const services = [
         description:
             'Setup server, domain, SSL, dan deploy otomatis (CI/CD). Setelah online, website dan aplikasi Anda tetap dipantau, di-backup, dan diperbarui.',
         tags: ['VPS & Docker', 'CI/CD'],
+    },
+    {
+        icon: ShieldCheck,
+        title: 'Pemulihan Website Kena Hack',
+        description:
+            'Malware, backdoor, atau redirect aneh? Website dibersihkan, celahnya ditutup, lalu dipulihkan supaya kembali aman dan bisa diakses pengunjung.',
+        tags: ['Hapus malware', 'Tutup celah'],
+    },
+    {
+        icon: Wrench,
+        title: 'Perbaikan WordPress',
+        description:
+            'Plugin error, tampilan berantakan, website lambat, atau mati setelah update. Masalahnya dicari sampai ke akar, bukan sekadar ditambal.',
+        tags: ['WordPress', 'Elementor'],
+    },
+    {
+        icon: Plug,
+        title: 'Integrasi Sistem',
+        description:
+            'Hubungkan website dengan payment gateway, API pihak ketiga, atau sistem yang sudah Anda pakai, supaya pembayaran dan data berjalan otomatis.',
+        tags: ['Payment gateway', 'REST API'],
     },
 ];
 
