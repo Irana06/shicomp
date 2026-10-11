@@ -7,6 +7,7 @@ import {
     SectionHeading,
     WhatsappLink,
 } from '@/components/landing/primitives';
+import { Aftercare } from '@/components/landing/aftercare';
 import { formatRupiah } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { fillTemplate, PACKAGE_MESSAGE } from '@/lib/whatsapp';
@@ -17,6 +18,11 @@ const tierKanji: Record<string, string> = {
     ume: '梅',
     take: '竹',
     matsu: '松',
+};
+
+// Categories billed per period instead of once per project.
+const priceUnit: Record<string, string> = {
+    maintenance: '/bulan',
 };
 
 export function Pricing({ categories }: { categories: PackageCategory[] }) {
@@ -54,7 +60,7 @@ export function Pricing({ categories }: { categories: PackageCategory[] }) {
                         <div
                             role="tablist"
                             aria-label="Kategori layanan"
-                            className="bg-paper-deep flex gap-1 rounded-[14px] p-1"
+                            className="bg-paper-deep grid grid-cols-2 gap-1 rounded-[14px] p-1 sm:flex"
                         >
                             {categories.map((category) => {
                                 const selected = category.slug === active.slug;
@@ -92,14 +98,18 @@ export function Pricing({ categories }: { categories: PackageCategory[] }) {
                             key={product.id}
                             product={product}
                             categoryName={active.name}
+                            unit={priceUnit[active.slug]}
                         />
                     ))}
                 </ul>
 
                 <p className="text-ink-subtle text-center text-[13px] leading-[1.6] sm:text-sm">
-                    Harga final ditentukan setelah diskusi brief. Tombol pesan
-                    membuka WhatsApp dengan pesan yang sudah terisi otomatis.
+                    Harga di atas adalah harga awal; harga final ditentukan
+                    setelah diskusi brief. Tombol pesan membuka WhatsApp dengan
+                    pesan yang sudah terisi otomatis.
                 </p>
+
+                <Aftercare />
             </Container>
         </section>
     );
@@ -108,9 +118,11 @@ export function Pricing({ categories }: { categories: PackageCategory[] }) {
 function PackageCard({
     product,
     categoryName,
+    unit,
 }: {
     product: PackageProduct;
     categoryName: string;
+    unit?: string;
 }) {
     const featured = product.is_featured;
     const kanji = tierKanji[product.name.toLowerCase()];
@@ -178,6 +190,18 @@ function PackageCard({
                     {product.price === null
                         ? 'Sesuai brief'
                         : formatRupiah(product.price)}
+                    {product.price !== null && unit && (
+                        <span
+                            className={cn(
+                                'ml-1 font-sans text-base font-medium',
+                                featured
+                                    ? 'text-night-muted'
+                                    : 'text-ink-subtle',
+                            )}
+                        >
+                            {unit}
+                        </span>
+                    )}
                 </p>
             </div>
 

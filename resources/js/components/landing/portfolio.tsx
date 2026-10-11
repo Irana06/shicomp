@@ -1,5 +1,10 @@
-import { Container, SectionHeading } from '@/components/landing/primitives';
+import {
+    Container,
+    SakuraPetal,
+    SectionHeading,
+} from '@/components/landing/primitives';
 import { portfolio } from '@/data/portfolio';
+import { testimonials } from '@/data/testimonials';
 import { cn } from '@/lib/utils';
 
 export function Portfolio() {
@@ -61,9 +66,53 @@ export function Portfolio() {
                             <p className="text-ink-muted text-sm leading-[1.6] sm:text-[15px]">
                                 {item.summary}
                             </p>
+                            {item.highlights && item.highlights.length > 0 && (
+                                <ul className="flex flex-col gap-1.5 text-sm leading-[1.55] sm:text-[15px]">
+                                    {item.highlights.map((point) => (
+                                        <li
+                                            key={point}
+                                            className="flex gap-2.5"
+                                        >
+                                            <SakuraPetal className="text-sakura mt-1 size-3.5 shrink-0" />
+                                            {point}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                         </li>
                     ))}
                 </ul>
+
+                {testimonials.length > 0 && (
+                    <div className="border-line flex flex-col gap-5 border-t pt-8 sm:gap-7 sm:pt-12">
+                        <h3 className="font-display text-[22px] font-black sm:text-[28px]">
+                            Kata klien.
+                        </h3>
+                        <ul className="grid gap-4 md:grid-cols-2 md:gap-6">
+                            {testimonials.map((item) => (
+                                <li
+                                    key={item.name}
+                                    className="border-line bg-surface flex flex-col gap-4 rounded-xl border p-6 sm:p-8"
+                                >
+                                    <blockquote className="text-[15px] leading-[1.75] sm:text-base">
+                                        “{item.quote}”
+                                    </blockquote>
+                                    <p className="mt-auto text-sm">
+                                        <span className="font-bold">
+                                            {item.name}
+                                        </span>
+                                        <span className="text-ink-subtle">
+                                            {' '}
+                                            · {item.role}
+                                            {item.project &&
+                                                ` · ${item.project}`}
+                                        </span>
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
             </Container>
         </section>
     );

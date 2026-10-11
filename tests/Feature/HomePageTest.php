@@ -25,13 +25,27 @@ class HomePageTest extends TestCase
             ->assertOk()
             ->assertInertia(fn (Assert $page) => $page
                 ->component('public/home')
-                ->has('categories', 1)
+                ->has('categories', 4)
                 ->where('categories.0.slug', 'website')
+                ->where('categories.3.slug', 'perbaikan')
                 ->has('categories.0.products', 3)
                 ->where('categories.0.products.0.name', 'Ume')
                 ->where('categories.0.products.1.is_featured', true)
                 ->has('categories.0.products.2.features', 4)
             );
+    }
+
+    public function test_product_seeder_keeps_prices_set_from_the_admin_panel()
+    {
+        $this->seed(ProductSeeder::class);
+        Product::where('slug', 'website-ume')->update(['price' => 2000000]);
+        Product::where('slug', 'mobile-matsu')->update(['price' => null]);
+
+        $this->seed(ProductSeeder::class);
+
+        $this->assertSame('2000000.00', Product::firstWhere('slug', 'website-ume')->price);
+        $this->assertSame('4500000.00', Product::firstWhere('slug', 'website-take')->price);
+        $this->assertNull(Product::firstWhere('slug', 'mobile-matsu')->price);
     }
 
     public function test_home_page_shares_contact_details()
