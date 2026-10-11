@@ -1,5 +1,6 @@
 import { Container, SectionHeading } from '@/components/landing/primitives';
 import { portfolio } from '@/data/portfolio';
+import { cn } from '@/lib/utils';
 
 export function Portfolio() {
     if (portfolio.length === 0) {
@@ -18,7 +19,17 @@ export function Portfolio() {
                     title="Karya terpilih."
                 />
 
-                <ul className="grid gap-7 md:grid-cols-3 md:gap-6">
+                <ul
+                    className={cn(
+                        'grid gap-7 md:gap-6',
+                        // Rows stay full: three per row for 3, 6, 9 items, four for 4, otherwise two.
+                        portfolio.length % 3 === 0
+                            ? 'md:grid-cols-3'
+                            : portfolio.length === 4
+                              ? 'md:grid-cols-2 xl:grid-cols-4'
+                              : 'md:grid-cols-2',
+                    )}
+                >
                     {portfolio.map((item) => (
                         <li
                             key={item.title}

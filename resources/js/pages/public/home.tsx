@@ -21,7 +21,7 @@ export default function Home({ categories }: Props) {
                 <meta
                     head-key="description"
                     name="description"
-                    content="ShikaComp oleh Yushika: jasa pembuatan website (Laravel & React), aplikasi mobile (Flutter), deploy dan maintenance server, pemulihan website kena hack, perbaikan WordPress, dan integrasi sistem untuk UMKM, startup, instansi, dan personal."
+                    content="ShikaComp oleh Yushika: jasa pembuatan website (Laravel & React), aplikasi mobile (Flutter), deploy dan maintenance server, pemulihan website kena hack, dan integrasi sistem untuk UMKM, startup, instansi, dan personal."
                 />
             </Head>
 

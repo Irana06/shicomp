@@ -1,12 +1,6 @@
-import {
-    AppWindow,
-    Plug,
-    Server,
-    ShieldCheck,
-    Smartphone,
-    Wrench,
-} from 'lucide-react';
+import { AppWindow, Plug, Server, ShieldCheck, Smartphone } from 'lucide-react';
 import { Container, SectionHeading } from '@/components/landing/primitives';
+import { cn } from '@/lib/utils';
 
 const services = [
     {
@@ -38,13 +32,6 @@ const services = [
         tags: ['Hapus malware', 'Tutup celah'],
     },
     {
-        icon: Wrench,
-        title: 'Perbaikan WordPress',
-        description:
-            'Plugin error, tampilan berantakan, website lambat, atau mati setelah update. Masalahnya dicari sampai ke akar, bukan sekadar ditambal.',
-        tags: ['WordPress', 'Elementor'],
-    },
-    {
         icon: Plug,
         title: 'Integrasi Sistem',
         description:
@@ -73,12 +60,18 @@ export function Services() {
                     </p>
                 </div>
 
-                <ul className="grid gap-3.5 md:grid-cols-3 md:gap-6">
+                {/* Six columns: the first row takes three cards, the second row two wider ones, so no gap is left. */}
+                <ul className="grid gap-3.5 md:grid-cols-6 md:gap-6">
                     {services.map(
-                        ({ icon: Icon, title, description, tags }) => (
+                        ({ icon: Icon, title, description, tags }, index) => (
                             <li
                                 key={title}
-                                className="border-line bg-surface flex flex-col gap-3 rounded-xl border p-6 sm:gap-5 sm:p-9"
+                                className={cn(
+                                    'border-line bg-surface flex flex-col gap-3 rounded-xl border p-6 sm:gap-5 sm:p-9',
+                                    index < 3
+                                        ? 'md:col-span-2'
+                                        : 'md:col-span-3',
+                                )}
                             >
                                 <div className="flex items-center gap-3.5 md:flex-col md:items-start md:gap-5">
                                     <span className="bg-shu-soft text-shu flex size-11 shrink-0 items-center justify-center rounded-xl sm:size-[52px]">

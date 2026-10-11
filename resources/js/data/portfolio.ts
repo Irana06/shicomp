@@ -27,34 +27,4 @@ export const portfolio: PortfolioItem[] = [
         image: '/images/portfolio/yushika-portfolio.webp',
         url: 'https://yushika.my.id',
     },
-    {
-        title: 'RuangKelas',
-        category: 'Sistem Web · Laravel',
-        summary:
-            'LMS sekolah dengan empat peran, nilai berbobot, dan kuis acak per siswa. Dikerjakan untuk Script Media.',
-        image: '/images/portfolio/ruangkelas-lms.webp',
-    },
-    {
-        title: 'Sewa Toko Online',
-        category: 'Sistem Web · Laravel',
-        summary:
-            'Platform sewa toko online: etalase untuk pembeli, panel paket dan tagihan, pembayaran Midtrans. Dikerjakan untuk Script Media.',
-        image: '/images/portfolio/sewa-toko-online.webp',
-    },
-    {
-        title: 'Pondok Panggung',
-        category: 'Website · WordPress',
-        summary:
-            'Perawatan dan pengembangan lanjutan website klien. Dikerjakan di GSM Studio.',
-        image: '/images/portfolio/pondok-panggung.webp',
-        url: 'https://pondokpanggung.com',
-    },
-    {
-        title: 'Script Media',
-        category: 'Website · WordPress',
-        summary:
-            'Ikut mengerjakan website perusahaan Script Media saat bekerja di GSM Studio.',
-        image: '/images/portfolio/script-media.webp',
-        url: 'https://script-media.net',
-    },
 ];

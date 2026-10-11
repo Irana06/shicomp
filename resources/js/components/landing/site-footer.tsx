@@ -31,7 +31,6 @@ export function SiteFooter() {
                         <a href="/#layanan">Aplikasi Mobile</a>
                         <a href="/#layanan">Deploy &amp; Maintenance</a>
                         <a href="/#layanan">Pemulihan Website Kena Hack</a>
-                        <a href="/#layanan">Perbaikan WordPress</a>
                         <a href="/#layanan">Integrasi Sistem</a>
                     </FooterColumn>
 
