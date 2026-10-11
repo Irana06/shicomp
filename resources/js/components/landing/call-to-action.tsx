@@ -35,11 +35,11 @@ export function CallToAction() {
                             Punya ide project? Ceritakan dulu, kita rancang
                             bersama.
                         </h2>
-                        <p className="text-shu-soft text-[15px] sm:text-lg">
-                            {contact.business_hours
-                                ? `Balasan pada ${contact.business_hours}.`
-                                : 'Balasan pada [JAM OPERASIONAL].'}
-                        </p>
+                        {contact.business_hours && (
+                            <p className="text-shu-soft text-[15px] sm:text-lg">
+                                Balasan pada {contact.business_hours}.
+                            </p>
+                        )}
                     </div>
 
                     <WhatsappLink

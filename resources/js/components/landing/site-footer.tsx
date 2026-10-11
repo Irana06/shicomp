@@ -42,15 +42,15 @@ export function SiteFooter() {
                     </FooterColumn>
 
                     <FooterColumn title="KONTAK">
-                        <span>WhatsApp {contact.whatsapp ?? '[NOMOR]'}</span>
-                        {contact.email ? (
+                        {contact.whatsapp && (
+                            <span>WhatsApp {contact.whatsapp}</span>
+                        )}
+                        {contact.email && (
                             <a href={`mailto:${contact.email}`}>
                                 {contact.email}
                             </a>
-                        ) : (
-                            <span>[EMAIL]</span>
                         )}
-                        {instagram ? (
+                        {instagram && (
                             <a
                                 href={`https://instagram.com/${instagram}`}
                                 target="_blank"
@@ -58,8 +58,6 @@ export function SiteFooter() {
                             >
                                 Instagram @{instagram}
                             </a>
-                        ) : (
-                            <span>Instagram [@AKUN]</span>
                         )}
                     </FooterColumn>
                 </div>
