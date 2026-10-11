@@ -25,7 +25,8 @@ export function Container({ className, ...props }: ComponentProps<'div'>) {
     return (
         <div
             className={cn(
-                'mx-auto w-full max-w-[1200px] px-5 sm:px-8',
+                // Full width: content runs edge to edge with a gutter that grows on wider screens.
+                'w-full px-5 sm:px-8 lg:px-14 xl:px-20 2xl:px-28',
                 className,
             )}
             {...props}

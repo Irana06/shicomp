@@ -3,11 +3,11 @@ export type FaqItem = {
     answer: string;
 };
 
-// TODO(Yushika): replace every [BRACKETED] part with your real policy before launch.
+// Answers with a [BRACKETED] part are hidden on the site until the real policy is filled in.
 export const faq: FaqItem[] = [
     {
         question: 'Berapa lama waktu pengerjaannya?',
-        answer: 'Tergantung paket dan fitur. Website sederhana biasanya [X] minggu, sistem custom atau aplikasi mobile [X] minggu atau lebih. Estimasi pasti diberikan di tahap Rancang.',
+        answer: 'Tergantung paket dan fitur. Estimasi waktu yang pasti diberikan di tahap Rancang, sebelum pengerjaan dimulai, dan progresnya bisa Anda pantau lewat halaman Cek Status.',
     },
     {
         question: 'Bagaimana sistem pembayarannya?',
@@ -15,7 +15,7 @@ export const faq: FaqItem[] = [
     },
     {
         question: 'Apakah harga sudah termasuk domain & hosting?',
-        answer: '[Jelaskan apakah domain & hosting termasuk harga paket.] Saya juga bisa bantu memilih dan menyiapkan server yang sesuai kebutuhan.',
+        answer: 'Rinciannya dibahas saat diskusi brief, karena tergantung kebutuhan. Saya bisa bantu memilih dan menyiapkan domain, hosting, atau server yang sesuai, termasuk SSL dan deploy.',
     },
     {
         question: 'Berapa kali saya bisa minta revisi?',

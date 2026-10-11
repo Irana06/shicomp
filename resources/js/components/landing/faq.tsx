@@ -2,7 +2,14 @@ import { Minus, Plus } from 'lucide-react';
 import { Container, SectionHeading } from '@/components/landing/primitives';
 import { faq } from '@/data/faq';
 
+// Answers that still hold a [PLACEHOLDER] stay hidden until the real policy is filled in.
+const answered = faq.filter((item) => !/\[[^\]]+\]/.test(item.answer));
+
 export function Faq() {
+    if (answered.length === 0) {
+        return null;
+    }
+
     return (
         <section
             id="faq"
@@ -18,7 +25,7 @@ export function Faq() {
                 />
 
                 <div className="border-line border-t">
-                    {faq.map((item, index) => (
+                    {answered.map((item, index) => (
                         <details
                             key={item.question}
                             open={index === 0}
